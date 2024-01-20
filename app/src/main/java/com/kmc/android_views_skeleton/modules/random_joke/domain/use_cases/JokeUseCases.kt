@@ -1,6 +1,6 @@
 package com.kmc.android_views_skeleton.modules.random_joke.domain.use_cases
 
-import com.kmc.android_views_skeleton.modules.random_joke.RandomJokeRepositoryRepresentable
+import com.kmc.android_views_skeleton.modules.random_joke.RandomJokeRepository
 import com.kmc.android_views_skeleton.modules.random_joke.data.toJoke
 import com.kmc.android_views_skeleton.modules.random_joke.domain.entity.Joke
 import com.kmc.android_views_skeleton.modules.random_joke.domain.entity.JokeCategory
@@ -9,7 +9,7 @@ import com.kmc.android_views_skeleton.utils.Resource.*
 import javax.inject.Inject
 
 class JokeUseCases @Inject constructor(
-    private val randomJokeRepo: RandomJokeRepositoryRepresentable,
+    private val randomJokeRepo: RandomJokeRepository,
 ) {
 
     suspend fun getRandomJoke(selectedCategory: JokeCategory): Resource<Joke> {

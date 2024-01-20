@@ -10,7 +10,7 @@ interface RandomJokeViewModelDelegate {
     fun showJokesBrowser()
 }
 
-interface RandomJokeRepositoryRepresentable {
+interface RandomJokeRepository {
 
     suspend fun fetchRandomJoke(): Resource<RandomJokeDTO>
     suspend fun fetchRandomJokeWith(category: JokeCategory): Resource<RandomJokeDTO>

@@ -3,7 +3,7 @@ package com.kmc.android_views_skeleton.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.kmc.android_views_skeleton.utils.Constants
-import com.kmc.android_views_skeleton.utils.networking.api.JokeApi
+import com.kmc.android_views_skeleton.utils.networking.api.ChuckNorrisApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -40,7 +40,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providerRetrofit(
+    fun provideRetrofit(
         client: OkHttpClient,
     ): Retrofit {
         return Retrofit.Builder()
@@ -52,7 +52,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providerApiService(retrofit: Retrofit): JokeApi {
-        return retrofit.create(JokeApi::class.java)
+    fun provideApiService(retrofit: Retrofit): ChuckNorrisApi {
+        return retrofit.create(ChuckNorrisApi::class.java)
     }
 }

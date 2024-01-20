@@ -6,7 +6,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface JokeApi {
+interface ChuckNorrisApi {
 
     // https://api.chucknorris.io/jokes/random
     @GET("random")
