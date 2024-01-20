@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Categories">
+         <item>All</item>
+         <item>Animal</item>
+         <item>Career</item>
+         <item>Celebrity</item>
+         <item>Dev</item>
+         <item>Explicit</item>
+         <item>Fashion</item>
+         <item>Food</item>
+         <item>History</item>
+         <item>Money</item>
+         <item>Movie</item>
+         <item>Music</item>
+         <item>Political</item>
+         <item>Religion</item>
+         <item>Science</item>
+         <item>Sport</item>
+         <item>Travel</item>
+    </string-array>
+</resources>
