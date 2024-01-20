@@ -3,9 +3,9 @@ package com.kmc.android_views_skeleton
 import android.app.Application
 import android.content.Context
 import com.kmc.android_views_skeleton.AppTransition.showRandomJoke
-import com.kmc.android_views_skeleton.utils.navigation.AppRouter
-import com.kmc.android_views_skeleton.utils.navigation.Coordinator
-import com.kmc.android_views_skeleton.utils.navigation.navigator.Navigator
+import com.kmc.android_views_skeleton.infrastructure.navigation.AppRouter
+import com.kmc.android_views_skeleton.infrastructure.navigation.Coordinator
+import com.kmc.android_views_skeleton.infrastructure.navigation.navigator.Navigator
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp

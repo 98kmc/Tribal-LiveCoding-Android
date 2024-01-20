@@ -1,6 +1,6 @@
 package com.kmc.android_views_skeleton.modules.random_joke.ui.jokes_browser
 
-import android.os.Parcelable
+import com.kmc.android_views_skeleton.infrastructure.ViewModel
 import com.kmc.android_views_skeleton.modules.random_joke.domain.entity.Joke
 import com.kmc.android_views_skeleton.modules.random_joke.domain.use_cases.JokeUseCases
 import com.kmc.android_views_skeleton.utils.Resource
@@ -14,21 +14,27 @@ import kotlinx.parcelize.Parcelize
 
 @Suppress("PARCELABLE_PRIMARY_CONSTRUCTOR_IS_EMPTY", "PROPERTY_WONT_BE_SERIALIZED")
 @Parcelize
-class JokesBrowserViewModel private constructor() : Parcelable {
+class JokesBrowserViewModel private constructor() : ViewModel<JokeBrowserViewEvent> {
 
-    private val scope = CoroutineScope(Dispatchers.IO)
     private lateinit var useCases: JokeUseCases
+    private val scope = CoroutineScope(Dispatchers.IO)
     private var _jokesList = MutableStateFlow<List<Joke>>(listOf())
 
+    /***
+     * Exposed properties
+     */
     val jokesList get() = _jokesList.asStateFlow()
 
-    fun onEvent(event: JokeBrowserViewEvent) {
+    override fun onEvent(event: JokeBrowserViewEvent) {
 
         when (event) {
             is JokeBrowserViewEvent.searchTextDidChange -> searchJokes(event.text)
         }
     }
 
+    /***
+     * Private Methods
+     */
     private fun searchJokes(text: String) {
 
         scope.launch {

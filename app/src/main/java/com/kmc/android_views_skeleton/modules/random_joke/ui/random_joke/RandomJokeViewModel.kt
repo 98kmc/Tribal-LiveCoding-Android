@@ -1,6 +1,6 @@
 package com.kmc.android_views_skeleton.modules.random_joke.ui.random_joke
 
-import android.os.Parcelable
+import com.kmc.android_views_skeleton.infrastructure.ViewModel
 import com.kmc.android_views_skeleton.modules.random_joke.RandomJokeViewModelDelegate
 import com.kmc.android_views_skeleton.modules.random_joke.domain.entity.Joke
 import com.kmc.android_views_skeleton.modules.random_joke.domain.entity.JokeCategory
@@ -17,19 +17,20 @@ import kotlinx.parcelize.Parcelize
 
 @Suppress("PARCELABLE_PRIMARY_CONSTRUCTOR_IS_EMPTY", "PROPERTY_WONT_BE_SERIALIZED")
 @Parcelize
-class RandomJokeViewModel private constructor() : Parcelable {
+class RandomJokeViewModel private constructor() : ViewModel<RandomJokeViewEvent> {
 
     private lateinit var useCases: JokeUseCases
     private lateinit var coordinator: RandomJokeViewModelDelegate
     private val scope = CoroutineScope(Dispatchers.IO)
-
     private val _currentJoke = MutableStateFlow(Joke.emptyJoke())
-    val currentJoke = _currentJoke.asStateFlow()
-
     private var currentCategory: JokeCategory = JokeCategory.All
 
-    fun onEvent(event: RandomJokeViewEvent) {
+    /***
+     * Exposed properties
+     */
+    val currentJoke = _currentJoke.asStateFlow()
 
+    override fun onEvent(event: RandomJokeViewEvent) {
         when (event) {
             viewDidAppear -> getNewJoke()
             didTapTheScreen -> getNewJoke()

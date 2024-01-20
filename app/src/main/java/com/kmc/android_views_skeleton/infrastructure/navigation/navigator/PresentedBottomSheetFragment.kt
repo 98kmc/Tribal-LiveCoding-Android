@@ -1,4 +1,4 @@
-package com.kmc.android_views_skeleton.utils.navigation.navigator
+package com.kmc.android_views_skeleton.infrastructure.navigation.navigator
 
 import android.app.Activity
 import android.os.Bundle

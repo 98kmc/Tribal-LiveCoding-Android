@@ -45,6 +45,11 @@ class JokeBrowserFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     /***
      * Private Methods
      */
@@ -62,6 +67,7 @@ class JokeBrowserFragment : Fragment() {
             jokesRecycler.applySnapshot(newList = fetchedJokeList)
         }.launchIn(viewLifecycleOwner.lifecycleScope)
     }
+
     private fun addSearchBarEventListeners() {
 
         binding.searchBar.setOnEditorActionListener { v, actionId, _ ->

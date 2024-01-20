@@ -1,6 +1,5 @@
 package com.kmc.android_views_skeleton.modules.random_joke.ui.jokes_browser.jokes_adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,6 @@ import com.kmc.android_views_skeleton.R
 import com.kmc.android_views_skeleton.databinding.JokeItemCellBinding
 import com.kmc.android_views_skeleton.modules.random_joke.domain.entity.Joke
 
-typealias VoidLambda = () -> Unit
 class JokesRecyclerAdapter(
     private var items: MutableList<Joke> = mutableListOf(),
 ) :  RecyclerView.Adapter<JokesRecyclerAdapter.JokesItemViewHolder>() {

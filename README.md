@@ -7,7 +7,7 @@
 
 - 
 
-### Esta applicacion cumple con los siguientes requisitos:
+### Esta aplicación cumple con los siguientes requisitos:
 
 - [x] **Patrón MVVM**: La aplicación sigue el patrón de diseño Modelo-Vista-VistaModelo para una arquitectura organizada y mantenible.
 

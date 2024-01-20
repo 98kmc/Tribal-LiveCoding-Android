@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import com.kmc.android_views_skeleton.databinding.ActivityMainBinding
-import com.kmc.android_views_skeleton.utils.navigation.navigator.Navigator
+import com.kmc.android_views_skeleton.infrastructure.navigation.navigator.Navigator
 
 class MainActivity : AppCompatActivity() {
 

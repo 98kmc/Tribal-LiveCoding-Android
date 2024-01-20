@@ -52,6 +52,11 @@ class RandomJokeFragment : Fragment() {
         viewModel.onEvent(viewDidAppear)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     /***
      * Private Methods
      */
